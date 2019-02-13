@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+  max-width: 100%;
+  min-width: 140px;
+  min-height: 240px;
+  display: flex;
+  flex-flow: row;
+  background-color: #ecf0f1;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  user-select: none;
+  transition: 0.25s;
+}
