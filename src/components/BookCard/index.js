@@ -11,7 +11,7 @@ import "./styles.css";
 
 function BookCard({ book }) {
   return (
-    <div>
+    <div className="book-card">
       <Card>
         <BookCardAvatar src={book.imageLinks.thumbnail} />
         <BookCardBody title={book.title} authors={book.authors}>

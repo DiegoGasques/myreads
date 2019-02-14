@@ -1,6 +1,6 @@
 .book-card-avatar {
-  width: 110px;
-  height: 170px;
+  min-width: 110px;
+  min-height: 170px;
 
   background-size: cover;
   background-repeat: no-repeat;

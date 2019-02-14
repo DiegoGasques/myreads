@@ -21,9 +21,7 @@ function StarRatings({ avgRating }) {
       </Ratings>
       <span style={{ fontWeight: "bold" }}> {`${avgRating}`}</span> avg. rating
     </div>
-  ) : (
-    <p style={{ fontSize: "13px" }}>No rating yet</p>
-  );
+  ) : null;
 }
 
 Ratings.propTypes = {
