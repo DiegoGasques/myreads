@@ -1,24 +1,33 @@
 import React from "react";
 import * as BooksAPI from "../utils/BooksAPI";
+
 import "./App.css";
-import BookShelf from "./BookShelf";
+import HomePage from "./HomePage";
 
 class BooksApp extends React.Component {
+  static keys = {
+    shelf1: "currentlyReading",
+    shelf2: "wantToRead",
+    shelf3: "read"
+  };
+
   state = {
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
     showSearchPage: false,
     books: []
   };
 
-  componentDidMount() {
-    BooksAPI.getAll()
-      .then(books => this.setState({ books }))
-      .catch(e => console.log(e));
+  async componentDidMount() {
+    let books = window.localStorage.getItem("allBooks");
+
+    if (!books) {
+      try {
+        books = await BooksAPI.getAll();
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    this.setState({ books });
   }
 
   render() {
@@ -51,23 +60,7 @@ class BooksApp extends React.Component {
             </div>
           </div>
         ) : (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
-            <div className="list-books-content">
-              <div>
-                <BookShelf books={this.state.books} />
-                <BookShelf books={this.state.books} />
-                <BookShelf books={this.state.books} />
-              </div>
-            </div>
-            <div className="open-search">
-              <button onClick={() => this.setState({ showSearchPage: true })}>
-                Add a book
-              </button>
-            </div>
-          </div>
+          <HomePage books={this.state.books} keys={BooksApp.keys} />
         )}
       </div>
     );
