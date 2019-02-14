@@ -1,0 +1,18 @@
+.book-card-body {
+  margin: 0 10px;
+}
+
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+
+.book-title {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.book-authors {
+  color: #999;
+}

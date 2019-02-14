@@ -1,0 +1,9 @@
+.book-card-avatar {
+  width: 110px;
+  height: 170px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+}
