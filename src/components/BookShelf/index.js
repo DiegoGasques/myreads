@@ -8,15 +8,15 @@ import BookCard from "../BookCard";
 
 import "./styles.css";
 
-function BookShelf({ books }) {
+function BookShelf({ filteredBooks, title, handleUpdate }) {
   return (
     <div className="book-shelf">
-      <h2 className="bookshelf-title">Currently Reading</h2>
+      <h2 className="bookshelf-title">{title}</h2>
       <Shelf>
         <BooksGrid>
-          {books.map(b => (
-            <GridItem>
-              <BookCard book={b} />
+          {filteredBooks.map(b => (
+            <GridItem key={b.id}>
+              <BookCard book={b} handleUpdate={handleUpdate} />
             </GridItem>
           ))}
         </BooksGrid>
@@ -26,7 +26,8 @@ function BookShelf({ books }) {
 }
 
 BookShelf.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired
+  filteredBooks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default BookShelf;

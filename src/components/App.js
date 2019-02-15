@@ -17,7 +17,7 @@ class BooksApp extends React.Component {
   };
 
   async componentDidMount() {
-    let books = window.localStorage.getItem("allBooks");
+    let books = JSON.parse(window.localStorage.getItem("allBooks"));
 
     if (!books) {
       try {
@@ -29,6 +29,29 @@ class BooksApp extends React.Component {
 
     this.setState({ books });
   }
+
+  updateBookStatus = async (id, shelf) => {
+    const book = this.state.books.find(b => b.id === id);
+
+    try {
+      await BooksAPI.update(book, shelf);
+      this.setState(
+        prevState => ({
+          books: [
+            ...prevState.books.filter(b => b.id !== id),
+            { ...book, shelf }
+          ]
+        }),
+        () =>
+          window.localStorage.setItem(
+            "allBooks",
+            JSON.stringify(this.state.books)
+          )
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     BooksAPI.getAll().then(books => console.log(books));
@@ -60,7 +83,11 @@ class BooksApp extends React.Component {
             </div>
           </div>
         ) : (
-          <HomePage books={this.state.books} keys={BooksApp.keys} />
+          <HomePage
+            books={this.state.books}
+            keys={BooksApp.keys}
+            handleUpdate={this.updateBookStatus}
+          />
         )}
       </div>
     );

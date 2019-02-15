@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 import "./styles.css";
 
-function BookCard({ book }) {
+function BookCard({ book, handleUpdate }) {
   return (
     <div className="book-card">
       <Card>
@@ -18,7 +18,7 @@ function BookCard({ book }) {
           <Ratings avgRating={book.averageRating} />
           <BookShelfChanger
             currValue={book.shelf}
-            handleUpdate={value => console.log(value)}
+            handleUpdate={shelf => handleUpdate(book.id, shelf)}
           />
         </BookCardBody>
       </Card>
