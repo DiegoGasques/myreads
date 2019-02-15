@@ -1,5 +1,6 @@
 import React from "react";
 import * as BooksAPI from "../utils/BooksAPI";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./HomePage";
@@ -57,17 +58,22 @@ class BooksApp extends React.Component {
   render() {
     BooksAPI.getAll().then(books => console.log(books));
     return (
-      <div className="app">
-        {this.state.showSearchPage ? (
-          <SearchPage />
-        ) : (
-          <HomePage
-            books={this.state.books}
-            keys={BooksApp.keys}
-            handleUpdate={this.updateBookStatus}
+      <Router>
+        <div className="app">
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <HomePage
+                books={this.state.books}
+                keys={BooksApp.keys}
+                handleUpdate={this.updateBookStatus}
+              />
+            )}
           />
-        )}
-      </div>
+          <Route path="/search" component={SearchPage} />
+        </div>
+      </Router>
     );
   }
 }
