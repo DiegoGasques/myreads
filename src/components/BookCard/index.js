@@ -13,7 +13,13 @@ function BookCard({ book, handleUpdate }) {
   return (
     <div className="book-card">
       <Card>
-        <BookCardAvatar src={book.imageLinks.thumbnail} />
+        <BookCardAvatar
+          src={
+            book.imageLinks
+              ? book.imageLinks.thumbnail
+              : "https://via.placeholder.com/100x170"
+          }
+        />
         <BookCardBody title={book.title} authors={book.authors}>
           <Ratings avgRating={book.averageRating} />
           <BookShelfChanger

@@ -1,19 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 
-function SearchPage() {
-  return (
-    <div className="search-books">
-      <div className="search-books-bar">
-        <button className="close-search">Close</button>
-        <div className="search-books-input-wrapper">
-          <input type="text" placeholder="Search by title or author" />
-        </div>
+import SearchBar from "./SearchBar";
+import SearchResults from "./SearchResults";
+import * as BooksAPI from "../../utils/BooksAPI";
+import "./styles.css";
+
+class SearchPage extends Component {
+  state = {
+    results: []
+  };
+
+  search = query => {
+    if (query) {
+      BooksAPI.search(query)
+        .then(results => this.setState({ results }))
+        .catch(e => console.log(e));
+    } else {
+      this.setState({ results: [] });
+    }
+  };
+
+  render() {
+    return (
+      <div className="search-books">
+        <SearchBar handleSearch={this.search} />
+        <SearchResults results={this.state.results} />
       </div>
-      <div className="search-books-results">
-        <ol className="books-grid" />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default SearchPage;

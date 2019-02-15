@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import BookShelf from "../BookShelf";
+import OpenSearchBtn from "./OpenSearchBtn";
 
 function fromStatusKeyToTitle(str) {
   return str
@@ -17,24 +18,18 @@ function HomePage({ books, keys, handleUpdate }) {
         <h1>MyReads</h1>
       </div>
       <div className="list-books-content">
-        <div>
-          {Object.keys(keys).map(k => {
-            return (
-              <BookShelf
-                key={k}
-                title={fromStatusKeyToTitle(keys[k])}
-                filteredBooks={books.filter(b => b.shelf === keys[k])}
-                handleUpdate={handleUpdate}
-              />
-            );
-          })}
-        </div>
+        {Object.keys(keys).map(k => {
+          return (
+            <BookShelf
+              key={k}
+              title={fromStatusKeyToTitle(keys[k])}
+              filteredBooks={books.filter(b => b.shelf === keys[k])}
+              handleUpdate={handleUpdate}
+            />
+          );
+        })}
       </div>
-      <div className="open-search">
-        <button onClick={() => this.setState({ showSearchPage: true })}>
-          Add a book
-        </button>
-      </div>
+      <OpenSearchBtn />
     </div>
   );
 }
