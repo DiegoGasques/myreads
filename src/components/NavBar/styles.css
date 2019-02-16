@@ -1,4 +1,6 @@
 .navbar {
   padding: 10px 0;
   background: #4a4063;
+  display: flex;
+  justify-content: center;
 }

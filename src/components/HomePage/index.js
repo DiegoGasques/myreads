@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import NavBar from "../NavBar";
 import Logo from "../Logo";
 import Container from "../Container";
+import Hero from "./Hero";
 import BookShelf from "../BookShelf";
 import OpenSearchBtn from "./OpenSearchBtn";
 
@@ -22,6 +23,7 @@ function HomePage({ books, keys, handleUpdate }) {
           <Logo path="/" text="MyReads" size="lg" />
         </Container>
       </NavBar>
+      <Hero />
       <div className="list-books-content">
         <Container>
           {Object.keys(keys).map(k => {
