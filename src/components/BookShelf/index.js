@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Shelf from "./Shelf";
@@ -8,21 +8,35 @@ import BookCard from "../BookCard";
 
 import "./styles.css";
 
-function BookShelf({ filteredBooks, title, handleUpdate }) {
-  return (
-    <div className="book-shelf">
-      <h2 className="bookshelf-title">{title}</h2>
-      <Shelf>
-        <BooksGrid>
-          {filteredBooks.map(b => (
-            <GridItem key={b.id}>
-              <BookCard book={b} handleUpdate={handleUpdate} />
-            </GridItem>
-          ))}
-        </BooksGrid>
-      </Shelf>
-    </div>
-  );
+class BookShelf extends Component {
+  state = {
+    translate: 0
+  };
+
+  scrollRight = () => {
+    this.setState(prevState => ({ translate: prevState.translate + 350 }));
+  };
+
+  render() {
+    const { filteredBooks, title, handleUpdate } = this.props;
+    return (
+      <div className="book-shelf">
+        <h2 className="bookshelf-title">{title}</h2>
+        <Shelf>
+          {handleOnDragStart => {
+            return filteredBooks.map(b => (
+              <BookCard
+                onDragStart={handleOnDragStart}
+                key={b.id}
+                book={b}
+                handleUpdate={handleUpdate}
+              />
+            ));
+          }}
+        </Shelf>
+      </div>
+    );
+  }
 }
 
 BookShelf.propTypes = {

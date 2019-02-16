@@ -19,11 +19,12 @@ function HomePage({ books, keys, handleUpdate }) {
   return (
     <div className="list-books">
       <NavBar>
-        <Container>
-          <Logo path="/" text="MyReads" size="lg" />
-        </Container>
+        <Logo path="/" text="MyReads" size="lg" />
       </NavBar>
-      <Hero />
+      <Container>
+        <Hero />
+      </Container>
+
       <div className="list-books-content">
         <Container>
           {Object.keys(keys).map(k => {

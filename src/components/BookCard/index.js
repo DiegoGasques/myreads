@@ -9,9 +9,9 @@ import PropTypes from "prop-types";
 
 import "./styles.css";
 
-function BookCard({ book, handleUpdate }) {
+function BookCard({ book, handleUpdate, ...props }) {
   return (
-    <div className="book-card">
+    <div className="book-card" {...props}>
       <Card>
         <BookCardAvatar
           src={
@@ -23,7 +23,7 @@ function BookCard({ book, handleUpdate }) {
         <BookCardBody title={book.title} authors={book.authors}>
           <Ratings avgRating={book.averageRating} />
           <BookShelfChanger
-            currValue={book.shelf}
+            currValue={book.shelf || "none"}
             handleUpdate={shelf => handleUpdate(book.id, shelf)}
           />
         </BookCardBody>

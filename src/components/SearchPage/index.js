@@ -21,6 +21,7 @@ class SearchPage extends Component {
   };
 
   render() {
+    console.log(this.state.results);
     return (
       <div className="search-books">
         <SearchBar handleSearch={this.search} />
