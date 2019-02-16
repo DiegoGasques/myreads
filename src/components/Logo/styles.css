@@ -1,0 +1,16 @@
+.logo h1 {
+  margin: 0;
+  color: #fff;
+}
+
+.logo h1.sm {
+  font-size: 1rem;
+}
+
+.logo h1.md {
+  font-size: 1.7rem;
+}
+
+.logo h1.lg {
+  font-size: 3rem;
+}

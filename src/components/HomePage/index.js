@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import NavBar from "../NavBar";
+import Logo from "../Logo";
+import Container from "../Container";
 import BookShelf from "../BookShelf";
 import OpenSearchBtn from "./OpenSearchBtn";
 
@@ -14,20 +17,24 @@ function fromStatusKeyToTitle(str) {
 function HomePage({ books, keys, handleUpdate }) {
   return (
     <div className="list-books">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
+      <NavBar>
+        <Container>
+          <Logo path="/" text="MyReads" size="lg" />
+        </Container>
+      </NavBar>
       <div className="list-books-content">
-        {Object.keys(keys).map(k => {
-          return (
-            <BookShelf
-              key={k}
-              title={fromStatusKeyToTitle(keys[k])}
-              filteredBooks={books.filter(b => b.shelf === keys[k])}
-              handleUpdate={handleUpdate}
-            />
-          );
-        })}
+        <Container>
+          {Object.keys(keys).map(k => {
+            return (
+              <BookShelf
+                key={k}
+                title={fromStatusKeyToTitle(keys[k])}
+                filteredBooks={books.filter(b => b.shelf === keys[k])}
+                handleUpdate={handleUpdate}
+              />
+            );
+          })}
+        </Container>
       </div>
       <OpenSearchBtn />
     </div>
