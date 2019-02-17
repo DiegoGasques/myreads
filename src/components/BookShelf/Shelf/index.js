@@ -8,8 +8,8 @@ import "./styles.css";
 class Shelf extends Component {
   responsive = {
     0: { items: 1 },
-    600: { items: 2 },
-    950: { items: 3 },
+    670: { items: 2 },
+    980: { items: 3 },
     1324: { items: 4 }
   };
 
