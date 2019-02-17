@@ -8,6 +8,8 @@ import Hero from "./Hero";
 import BookShelf from "../BookShelf";
 import OpenSearchBtn from "./OpenSearchBtn";
 
+import "./styles.css";
+
 function fromStatusKeyToTitle(str) {
   return str
     .split(/(?<!^)(?=[A-Z])/)

@@ -1,5 +1,6 @@
 .book-card-body {
   margin: 0 10px;
+  position: relative;
 }
 
 .book-title,

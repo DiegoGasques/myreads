@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Carousel from "react-alice-carousel";
 
-import "./styles.css";
 import "react-alice-carousel/lib/alice-carousel.css";
+import "./styles.css";
 
 class Shelf extends Component {
   responsive = {
@@ -18,11 +18,15 @@ class Shelf extends Component {
   render() {
     const { children } = this.props;
     return (
-      <Carousel
-        mouseDragEnabled
-        items={children(this.handleOnDragStart)}
-        responsive={this.responsive}
-      />
+      <div className="shelf">
+        <i class="fas fa-angle-left" />
+        <Carousel
+          mouseDragEnabled
+          items={children(this.handleOnDragStart)}
+          responsive={this.responsive}
+        />
+        <i class="fas fa-angle-right" />
+      </div>
     );
   }
 }

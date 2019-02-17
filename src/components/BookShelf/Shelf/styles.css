@@ -1,7 +1,18 @@
 .shelf {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px;
-  max-width: 98vw;
+  position: relative;
+}
+
+.fa-angle-right {
+  font-size: 2rem;
+  position: absolute;
+  top: 66px;
+  right: -31px;
+}
+
+.fa-angle-left {
+  font-size: 2rem;
+  position: absolute;
+  top: 66px;
+  left: -31px;
+  z-index: 999999;
 }

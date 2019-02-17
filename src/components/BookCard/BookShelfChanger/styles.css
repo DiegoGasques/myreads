@@ -3,7 +3,10 @@
   height: 30px;
   margin: 10px 0;
   border-radius: 50%;
-  background: #4a4063;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #053c5e;
   background-image: url("../../../icons/arrow-drop-down.svg");
   background-repeat: no-repeat;
   background-position: center;

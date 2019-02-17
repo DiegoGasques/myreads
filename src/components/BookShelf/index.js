@@ -21,7 +21,7 @@ class BookShelf extends Component {
     const { filteredBooks, title, handleUpdate } = this.props;
     return (
       <div className="book-shelf">
-        <h2 className="bookshelf-title">{title}</h2>
+        <h2 className="book-shelf-title">{title}</h2>
         <Shelf>
           {handleOnDragStart => {
             return filteredBooks.map(b => (
