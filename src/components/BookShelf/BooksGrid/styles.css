@@ -1,9 +1,0 @@
-.books-grid-list {
-  min-width: 100%;
-  overflow-x: auto;
-  position: relative;
-}
-
-/* .books-grid-list::-webkit-scrollbar {
-  display: none;
-} */

@@ -13,7 +13,14 @@ class SearchPage extends Component {
   search = query => {
     if (query) {
       BooksAPI.search(query)
-        .then(results => this.setState({ results }))
+        .then(results => {
+          if (Array.isArray(results)) {
+            this.setState({ results });
+          } else {
+            this.setState({ results: [] });
+            throw new Error(results.error);
+          }
+        })
         .catch(e => console.log(e));
     } else {
       this.setState({ results: [] });

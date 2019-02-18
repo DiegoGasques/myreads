@@ -19,20 +19,20 @@ class Shelf extends Component {
     const { children } = this.props;
     return (
       <div className="shelf">
-        <i class="fas fa-angle-left" />
+        <i className="fas fa-angle-left" />
         <Carousel
           mouseDragEnabled
           items={children(this.handleOnDragStart)}
           responsive={this.responsive}
         />
-        <i class="fas fa-angle-right" />
+        <i className="fas fa-angle-right" />
       </div>
     );
   }
 }
 
 Shelf.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.func
 };
 
 export default Shelf;

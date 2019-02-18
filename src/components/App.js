@@ -1,5 +1,6 @@
 import React from "react";
 import * as BooksAPI from "../utils/BooksAPI";
+import * as R from "ramda";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
@@ -7,7 +8,7 @@ import HomePage from "./HomePage";
 import SearchPage from "./SearchPage";
 
 // Export the context so the data can be accessed from other files
-const AppContext = React.createContext();
+export const AppContext = React.createContext();
 
 class BooksApp extends React.Component {
   static keys = {
@@ -17,7 +18,6 @@ class BooksApp extends React.Component {
   };
 
   state = {
-    showSearchPage: false,
     books: []
   };
 
@@ -30,8 +30,34 @@ class BooksApp extends React.Component {
         console.log(err);
       }
     }
-    this.setState({ books });
+    this.setState({ books }, this.setLocalStorage);
   }
+
+  setLocalStorage = () => {
+    window.localStorage.setItem("allBooks", JSON.stringify(this.state.books));
+  };
+
+  updateBookStatusAlt = (id, shelf) => {
+    BooksAPI.update(id, shelf).then(data => {
+      if (R.findIndex(R.propEq("id", id))(this.state.books) !== -1) {
+        this.setState(
+          ({ books }) => ({
+            books: books.map(b => (b.id === id ? { ...b, shelf } : b))
+          }),
+          this.setLocalStorage
+        );
+      } else {
+        BooksAPI.get(id).then(book => {
+          this.setState(
+            ({ books }) => ({
+              books: [...books, book]
+            }),
+            this.setLocalStorage
+          );
+        });
+      }
+    });
+  };
 
   updateBookStatus = async (id, shelf) => {
     const { books } = this.state;
@@ -104,5 +130,4 @@ class BooksApp extends React.Component {
   }
 }
 
-export { AppContext };
 export default BooksApp;

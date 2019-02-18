@@ -7,7 +7,6 @@ import { AppContext } from "../../App";
 
 import "./styles.css";
 
-console.log(AppContext);
 function SearchResults({ results }) {
   return (
     <div className="search-books-results">
@@ -16,11 +15,13 @@ function SearchResults({ results }) {
           <List>
             {results.map(b => {
               return (
-                <BookCard
-                  key={`results_${b.id}`}
-                  book={b}
-                  handleUpdate={context.updateBookStatus}
-                />
+                <li className="list-item">
+                  <BookCard
+                    key={`results_${b.id}`}
+                    book={b}
+                    handleUpdate={context.updateBookStatus}
+                  />
+                </li>
               );
             })}
           </List>
