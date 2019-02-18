@@ -24,7 +24,7 @@ function BookCard({ book, handleUpdate, ...props }) {
           <Ratings avgRating={book.averageRating} />
           <BookShelfChanger
             currValue={book.shelf || "none"}
-            handleUpdate={shelf => handleUpdate(book.id, shelf)}
+            handleUpdate={shelf => handleUpdate(book, shelf)}
           />
         </BookCardBody>
       </Card>
