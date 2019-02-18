@@ -15,12 +15,8 @@ function SearchResults({ results }) {
           <List>
             {results.map(b => {
               return (
-                <li className="list-item">
-                  <BookCard
-                    key={`results_${b.id}`}
-                    book={b}
-                    handleUpdate={context.updateBookStatus}
-                  />
+                <li key={`${b.id}`} className="list-item">
+                  <BookCard book={b} handleUpdate={context.updateBookStatus} />
                 </li>
               );
             })}
