@@ -15,9 +15,9 @@ class SearchPage extends Component {
       BooksAPI.search(query)
         .then(results => {
           if (Array.isArray(results)) {
-            this.setState({ results });
+            this.setState(() => ({ results }));
           } else {
-            this.setState({ results: [] });
+            this.setState(() => ({ results: [] }));
             throw new Error(results.error);
           }
         })
@@ -28,7 +28,6 @@ class SearchPage extends Component {
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <div className="search-books">
         <SearchBar handleSearch={this.search} />

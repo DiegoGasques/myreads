@@ -12,7 +12,7 @@ function SearchBar({ handleSearch }) {
         <input
           type="text"
           placeholder="Search by title or author"
-          onChange={e => handleSearch(e.target.value)}
+          onKeyUp={e => handleSearch(e.target.value)}
         />
       </div>
     </div>
