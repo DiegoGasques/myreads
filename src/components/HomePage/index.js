@@ -17,7 +17,7 @@ function fromStatusKeyToTitle(str) {
     .join(" ");
 }
 
-function HomePage({ books, keys, handleUpdate }) {
+function HomePage({ books, keys }) {
   return (
     <div className="list-books">
       <NavBar>
@@ -35,12 +35,12 @@ function HomePage({ books, keys, handleUpdate }) {
                 key={k}
                 title={fromStatusKeyToTitle(keys[k])}
                 filteredBooks={books.filter(b => b.shelf === keys[k])}
-                handleUpdate={handleUpdate}
               />
             );
           })}
         </Container>
       </div>
+
       <OpenSearchBtn />
     </div>
   );

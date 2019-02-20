@@ -2,9 +2,10 @@ import React from "react";
 import * as BooksAPI from "../utils/BooksAPI";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import "./App.css";
 import HomePage from "./HomePage";
 import SearchPage from "./SearchPage";
+
+import "./App.css";
 
 // Export the context so the data can be accessed from other files
 export const AppContext = React.createContext();
@@ -26,7 +27,7 @@ class BooksApp extends React.Component {
       try {
         books = await BooksAPI.getAll();
       } catch (err) {
-        console.log(err);
+        return err;
       }
     }
     this.setState({ books });
@@ -76,11 +77,7 @@ class BooksApp extends React.Component {
               exact
               path="/"
               render={() => (
-                <HomePage
-                  books={this.state.books}
-                  keys={BooksApp.keys}
-                  handleUpdate={this.updateBookStatus}
-                />
+                <HomePage books={this.state.books} keys={BooksApp.keys} />
               )}
             />
             <Route path="/search" component={SearchPage} />
