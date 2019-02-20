@@ -2,29 +2,32 @@ import React, { Component } from "react";
 
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
-import * as BooksAPI from "../../utils/BooksAPI";
+import { SearchService } from "../../services/searchService";
+
 import "./styles.css";
 
 class SearchPage extends Component {
-  state = {
-    results: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.searchService = new SearchService();
+    this.state = {
+      results: []
+    };
+  }
+
+  componentDidMount() {
+    this.searchService.getResults().subscribe(results => {
+      if (Array.isArray(results)) {
+        this.setState(() => ({ results }));
+      } else {
+        this.setState(() => ({ results: [] }));
+      }
+    });
+  }
 
   search = query => {
-    if (query) {
-      BooksAPI.search(query)
-        .then(results => {
-          if (Array.isArray(results)) {
-            this.setState(() => ({ results }));
-          } else {
-            this.setState(() => ({ results: [] }));
-            throw new Error(results.error);
-          }
-        })
-        .catch(e => console.log(e));
-    } else {
-      this.setState({ results: [] });
-    }
+    this.searchService.search(query.trim());
   };
 
   render() {

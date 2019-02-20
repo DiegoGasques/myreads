@@ -1,27 +1,35 @@
-import { Observable, Subject } from "rxjs";
-import { serach } from "./BooksAPI";
+import { Subject, of, from } from "rxjs";
+import { search } from "./BooksAPI";
+
+import {
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+  catchError
+} from "rxjs/operators";
 
 export class SearchService {
   constructor() {
     this.searchTerm = new Subject();
   }
 
-  search(term) {
-    this.searchTerm.next(term.value);
+  search(query) {
+    this.searchTerm.next(query);
   }
 
-  doSearch(term) {
-    return Observable.fromPromise(search(term));
+  doSearch(query) {
+    return from(search(query));
   }
 
   getResults() {
-    return this.searchTerm
-      .debounceTime(500)
-      .distinctUntilChanged()
-      .switchMap(term => (term ? this.doSearch(term) : Observable.of([])))
-      .catch(error => {
+    return this.searchTerm.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap(query => (query ? this.doSearch(query) : of([]))),
+      catchError(error => {
         console.error(error);
-        return Observable.of([]);
-      });
+        return of([]);
+      })
+    );
   }
 }

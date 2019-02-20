@@ -1,5 +1,5 @@
 import React from "react";
-import * as BooksAPI from "../utils/BooksAPI";
+import * as BooksAPI from "../services/BooksAPI";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import HomePage from "./HomePage";
