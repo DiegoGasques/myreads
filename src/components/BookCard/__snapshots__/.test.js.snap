@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match the component snapshot 1`] = `
+<div
+  className="book-card dark-theme"
+>
+  <Card>
+    <BookCardAvatar
+      src="http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    />
+    <BookCardBody
+      authors={
+        Array [
+          "William E. Shotts, Jr.",
+        ]
+      }
+      title="The Linux Command Line"
+    >
+      <StarRatings
+        avgRating={4}
+      />
+      <BookShelfChanger
+        currValue="currentlyReading"
+        handleUpdate={[Function]}
+      />
+    </BookCardBody>
+  </Card>
+</div>
+`;

@@ -1,17 +1,18 @@
 import React from "react";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 import Card from "../Card";
 import BookCardAvatar from "./BookCardAvatar";
 import BookCardBody from "./BookCardBody";
 import BookShelfChanger from "./BookShelfChanger";
 import Ratings from "../StarRatings";
-import PropTypes from "prop-types";
 
 import "./styles.css";
 
-function BookCard({ book, handleUpdate, ...props }) {
+function BookCard({ book, handleUpdate, className }) {
   return (
-    <div className="book-card" {...props}>
+    <div className={classNames("book-card", className)}>
       <Card>
         <BookCardAvatar
           src={
@@ -33,7 +34,9 @@ function BookCard({ book, handleUpdate, ...props }) {
 }
 
 BookCard.propTypes = {
-  book: PropTypes.object.isRequired
+  book: PropTypes.object.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
 
 export default BookCard;
