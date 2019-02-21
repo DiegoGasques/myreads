@@ -11,3 +11,13 @@ it("Should match snapshot", () => {
   );
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
+
+it("Should have the right className prop", () => {
+  const wrapper = shallow(
+    <Card className="primary-lg">
+      <h1>Test</h1>
+    </Card>
+  );
+
+  expect(wrapper.prop("className")).toBe("card primary-lg");
+});
