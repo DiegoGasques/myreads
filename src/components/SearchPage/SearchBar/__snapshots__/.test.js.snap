@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match SearchBar component snapshot 1`] = `
+<div
+  className="search-books-bar"
+>
+  <Link
+    className="close-search"
+    replace={false}
+    to="/"
+  >
+    Close
+  </Link>
+  <div
+    className="search-books-input-wrapper"
+  >
+    <input
+      onKeyUp={[Function]}
+      placeholder="Search by title or author"
+      type="text"
+    />
+  </div>
+</div>
+`;
