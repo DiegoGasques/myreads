@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match StarRatings component snapshot with avgRating prop 1`] = `
+<div
+  className="star-rating"
+>
+  <Ratings
+    changeRating={null}
+    gradientPathName=""
+    ignoreInlineStyles={false}
+    rating={3.8}
+    svgIconPaths="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+    svgIconViewBoxes="0 0 51 48"
+    typeOfWidget="Star"
+    widgetDimensions="13px"
+    widgetEmptyColors="rgb(203, 211, 227)"
+    widgetHoverColors="rgb(230, 67, 47)"
+    widgetRatedColors="#f8ce0b"
+    widgetSpacings="0.1px"
+  >
+    <Widget />
+    <Widget />
+    <Widget />
+    <Widget />
+    <Widget />
+  </Ratings>
+  <span
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    3.8
+  </span>
+   avg. rating
+</div>
+`;
+
+exports[`Should match StarRatings component snapshot without avgRating prop 1`] = `""`;

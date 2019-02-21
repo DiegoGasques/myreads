@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match NavBar component snapshot with children 1`] = `
+<nav
+  className="navbar"
+>
+  <h1>
+    Navbar
+  </h1>
+</nav>
+`;
