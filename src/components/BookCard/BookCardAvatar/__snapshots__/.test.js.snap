@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match the component snapshot 1`] = `
+<div
+  className="book-card-avatar"
+  style={
+    Object {
+      "backgroundImage": "url(https://via.placeholder.com/100x170)",
+    }
+  }
+/>
+`;
