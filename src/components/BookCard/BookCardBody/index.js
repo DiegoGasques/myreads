@@ -20,7 +20,8 @@ BookCardBody.defaultProps = {
 
 BookCardBody.propTypes = {
   title: PropTypes.string.isRequired,
-  authors: PropTypes.arrayOf(PropTypes.string)
+  authors: PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.node
 };
 
 export default BookCardBody;
