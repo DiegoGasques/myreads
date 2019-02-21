@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match SearchBar component snapshot 1`] = `
+<div
+  className="search-books-results"
+>
+  <ContextConsumer>
+    <Component />
+  </ContextConsumer>
+</div>
+`;
