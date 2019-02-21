@@ -10,9 +10,9 @@ import Ratings from "../StarRatings";
 
 import "./styles.css";
 
-function BookCard({ book, handleUpdate, className }) {
+function BookCard({ book, handleUpdate, className, ...props }) {
   return (
-    <div className={classNames("book-card", className)}>
+    <div className={classNames("book-card", className)} {...props}>
       <Card>
         <BookCardAvatar
           src={

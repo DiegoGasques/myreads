@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match the component snapshot 1`] = `
+<div
+  className="shelf"
+>
+  <i
+    className="fas fa-angle-left"
+  />
+  <AliceCarousel
+    autoPlay={false}
+    autoPlayDirection="ltr"
+    autoPlayInterval={250}
+    buttonsDisabled={false}
+    disableAutoPlayOnAction={false}
+    dotsDisabled={false}
+    duration={250}
+    fadeOutAnimation={false}
+    infinite={true}
+    items={Array []}
+    keysControlDisabled={false}
+    mouseDragEnabled={true}
+    playButtonEnabled={false}
+    preventEventOnTouchMove={false}
+    responsive={
+      Object {
+        "0": Object {
+          "items": 1,
+        },
+        "1324": Object {
+          "items": 4,
+        },
+        "670": Object {
+          "items": 2,
+        },
+        "980": Object {
+          "items": 3,
+        },
+      }
+    }
+    showSlideInfo={false}
+    slideToIndex={0}
+    stagePadding={Object {}}
+    startIndex={0}
+    stopAutoPlayOnHover={true}
+    swipeDisabled={false}
+  />
+  <i
+    className="fas fa-angle-right"
+  />
+</div>
+`;
