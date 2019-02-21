@@ -21,7 +21,7 @@ function HomePage({ books, keys }) {
   return (
     <div className="list-books">
       <NavBar>
-        <Logo path="/" text="MyReads" size="lg" />
+        <Logo path="/" text="MyReads" size="md" />
       </NavBar>
       <Container>
         <Hero />
