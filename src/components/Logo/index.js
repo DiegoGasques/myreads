@@ -9,7 +9,7 @@ function Logo({ text, className, path, size }) {
   return (
     <Link to={path}>
       <div className={classNames("logo", className)}>
-        <h1 className={classNames({ md: !size })}>{text}</h1>
+        <h1 className={classNames({ md: !size }, size)}>{text}</h1>
       </div>
     </Link>
   );
@@ -17,7 +17,6 @@ function Logo({ text, className, path, size }) {
 
 Logo.propTypes = {
   text: PropTypes.string.isRequired,
-  image: PropTypes.string,
   className: PropTypes.string,
   path: PropTypes.string.isRequired,
   size: PropTypes.string

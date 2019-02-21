@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match Logo component snapshot with optional props 1`] = `
+<Link
+  replace={false}
+  to="/"
+>
+  <div
+    className="logo great-logo"
+  >
+    <h1
+      className="sm"
+    >
+      Logo
+    </h1>
+  </div>
+</Link>
+`;
+
+exports[`Should match Logo component snapshot without optional props 1`] = `
+<Link
+  replace={false}
+  to="/"
+>
+  <div
+    className="logo"
+  >
+    <h1
+      className="md"
+    >
+      Logo
+    </h1>
+  </div>
+</Link>
+`;
