@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match the component snapshot 1`] = `
+<div
+  className="book-card-body"
+>
+  <div
+    className="book-title"
+  >
+    The Linux Command Line
+  </div>
+  <div
+    className="book-authors"
+  >
+    by 
+    William E. Shotts, Jr.
+  </div>
+</div>
+`;
