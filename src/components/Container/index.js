@@ -8,7 +8,7 @@ function Container({ children }) {
 }
 
 Container.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
 
 export default Container;
