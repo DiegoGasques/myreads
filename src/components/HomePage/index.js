@@ -10,7 +10,7 @@ import OpenSearchBtn from "./OpenSearchBtn";
 
 import "./styles.css";
 
-function fromStatusKeyToTitle(str) {
+export function fromStatusKeyToTitle(str) {
   return str
     .split(/(?<!^)(?=[A-Z])/)
     .map(word => word[0].toUpperCase() + word.slice(1))
