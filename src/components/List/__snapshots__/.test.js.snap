@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match the component snapshot 1`] = `
+<ul
+  className="list row"
+>
+  <li>
+    Child
+  </li>
+  <li>
+    Child
+  </li>
+</ul>
+`;
