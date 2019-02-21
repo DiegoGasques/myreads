@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match BookApp component snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "state": Object {
+        "books": Array [],
+      },
+      "updateBookStatus": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <div
+      className="app"
+    >
+      <Route
+        exact={true}
+        path="/"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        path="/search"
+      />
+    </div>
+  </BrowserRouter>
+</ContextProvider>
+`;
