@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match SearchPage component snapshot 1`] = `
+<div
+  className="search-books"
+>
+  <SearchBar
+    handleSearch={[Function]}
+  />
+  <SearchResults
+    results={Array []}
+  />
+</div>
+`;
