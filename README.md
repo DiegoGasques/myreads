@@ -15,7 +15,7 @@ If you do not have Node installed, go to: [Node.js](https://nodejs.org/en/)
 Clone the repository and install dependencies.
 
 ```
-git clone https://github.com/DiegoGasques/reactnd-project-myreads.git
+git clone git@github.com:DiegoGasques/myreads.git
 npm install
 ```
 
