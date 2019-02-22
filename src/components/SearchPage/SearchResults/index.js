@@ -7,6 +7,13 @@ import { AppContext } from "../../App";
 
 import "./styles.css";
 
+export function getBookInShelf(id, books) {
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].id === id) return books[i];
+  }
+  return null;
+}
+
 function SearchResults({ results }) {
   return (
     <div className="search-books-results">
@@ -14,9 +21,15 @@ function SearchResults({ results }) {
         {context => (
           <List>
             {results.map(b => {
+              const bookFromShelf = getBookInShelf(b.id, context.state.books);
               return (
                 <li key={`${b.id}`} className="list-item">
-                  <BookCard book={b} handleUpdate={context.updateBookStatus} />
+                  <BookCard
+                    book={
+                      bookFromShelf ? { ...b, shelf: bookFromShelf.shelf } : b
+                    }
+                    handleUpdate={context.updateBookStatus}
+                  />
                 </li>
               );
             })}

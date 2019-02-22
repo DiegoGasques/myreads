@@ -7,7 +7,7 @@ exports[`Should match the component snapshot 1`] = `
   <NavBar>
     <Logo
       path="/"
-      size="lg"
+      size="md"
       text="MyReads"
     />
   </NavBar>
