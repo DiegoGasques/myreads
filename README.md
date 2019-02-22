@@ -10,17 +10,17 @@ This is the first project of the Udacity React Nanodegree Program. The purpose o
 
 If you do not have Node installed, go to: [Node.js](https://nodejs.org/en/)
 
-Clone the repository and install dependencies.
+Clone the repository and cd into the project's directory.
 
 ```
 git clone git@github.com:DiegoGasques/myreads.git
+cd /myreads
+```
+
+Install dependencies and run the app locally.
+
+```
 npm install
-```
-
-Then go to the project's folder and launch the app.
-
-```
-cd /my-path/myreads
 npm start
 ```
 
