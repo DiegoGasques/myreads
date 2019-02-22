@@ -14,14 +14,11 @@
     "react-scripts": "2.1.1",
     "rxjs": "^6.4.0"
   },
-  "homepage": "https://DiegoGasques.github.io/myreads",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

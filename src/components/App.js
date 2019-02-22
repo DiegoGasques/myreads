@@ -7,7 +7,6 @@ import SearchPage from "./SearchPage";
 
 import "./App.css";
 
-// Export the context so the data can be accessed from other files
 export const AppContext = React.createContext();
 
 class BooksApp extends React.Component {

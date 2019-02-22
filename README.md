@@ -8,8 +8,6 @@ This is the first project of the Udacity React Nanodegree Program. The purpose o
 
 ## Running the App
 
-You can run a hosted version of the app at [myreads-DiegoGasques.surge.sh/](https://myreads-DiegoGasques.surge.sh/)
-
 If you do not have Node installed, go to: [Node.js](https://nodejs.org/en/)
 
 Clone the repository and install dependencies.
