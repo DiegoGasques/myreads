@@ -22,6 +22,7 @@ npm install
 Then go to the project's folder and launch the app.
 
 ```
+cd /my-path/myreads
 npm start
 ```
 
