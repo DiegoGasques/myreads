@@ -1,9 +1,7 @@
 import React from "react";
 import * as BooksAPI from "../services/BooksAPI";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import HomePage from "./HomePage";
-import SearchPage from "./SearchPage";
+import Routes from "./Routes";
 
 import "./App.css";
 
@@ -70,18 +68,9 @@ class BooksApp extends React.Component {
           updateBookStatus: this.updateBookStatus
         }}
       >
-        <Router>
-          <div className="app">
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <HomePage books={this.state.books} keys={BooksApp.keys} />
-              )}
-            />
-            <Route path="/search" component={SearchPage} />
-          </div>
-        </Router>
+        <div className="app">
+          <Routes state={this.state} keys={BooksApp.keys} />
+        </div>
       </AppContext.Provider>
     );
   }
